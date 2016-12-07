@@ -1,0 +1,56 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">Hi, {{currentUser.name}}!</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#!" ng-click="logout()">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+<div class="row">
+    <div class="col-md-5">
+        <h4><a href="#/new_question">Add a Question</a></h4>
+    </div>
+    <div class="col-md-7">
+
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="searchText.content"placeholder="Search">
+            </div>
+
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Question</td>
+            <td>Answers</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="question in questions | filter:searchText">
+            <td>{{question.content}}</td>
+            <td>{{question.answers.length}}</td>
+            <td>
+                <a class="btn btn-success" href="#/question/{{question._id}}"> Show</a>
+                <a class="btn btn-info" href="#/question/{{question._id}}/new_answer">Answer</a>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+</div>

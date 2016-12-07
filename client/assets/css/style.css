@@ -1,0 +1,9 @@
+.answer {
+	border: 1px solid black;
+	padding: 15px;
+	width: 40%;
+}
+
+.detail {
+	font-style: italic;
+}

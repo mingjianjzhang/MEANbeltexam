@@ -1,0 +1,47 @@
+<div class="container">
+
+	<div class="row">
+	<h3>Q & A!</h3>
+<div class="container">
+	<h3>Please login or register to start discussing!</h3>
+	<div class="row">
+	<div class="col-md-6">
+	<h4> Login </h4>
+	<p class="red-text" ng-repeat = "error in loginErrors"> {{error}}</p>
+	<form ng-submit="loginUser(userCreds)">
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="text" class="form-control" id="email" ng-model="userCreds.email">
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" ng-model="userCreds.password">
+		</div>
+		<button class="btn btn-success" type="submit">Login</button>
+	</form>
+	</div>
+	<div class="col-md-6">
+	<h4>Register</h4>
+	<p class="red" ng-repeat="error in regErrors">{{ error.message }} </p>
+	<form ng-submit="registerUser(newUser)">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" ng-model="newUser.name">
+		</div>
+		<div class="form-group">
+			<label for="remail"">Email</label>
+			<input type="text" class="form-control" id="remail" ng-model="newUser.email">
+		</div>
+		<div class="form-group">
+			<label for="rpassword">Password</label>
+			<input type="password" class="form-control" id="rpassword" ng-model="newUser.password">
+		</div>
+		<div class="form-group">
+			<label for="passwordc">Confirm Password</label>
+			<input type="password" class="form-control" id="passwordc" ng-model="newUser.passwordConfirmation">
+		</div>
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	</div>
+	</div>
+</div>
